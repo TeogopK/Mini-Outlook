@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FromConditionTest {
 
-    private FromCondition fromCondition = new FromCondition();
+    private final FromCondition fromCondition = new FromCondition();
 
     @Test
     void testSetValuesOneLiner() {
@@ -166,7 +166,7 @@ public class FromConditionTest {
             "Condition expected not to be marked as empty when there is a match");
     }
 
-    private Mail mail = getMail();
+    private final Mail mail = getMail();
 
     private Mail getMail() {
         Account sender = new Account("test@email.com", "Test Name");

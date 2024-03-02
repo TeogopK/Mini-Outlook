@@ -13,10 +13,10 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Rule {
-    private Set<RuleConditionAbstract> conditions;
+    private final Set<RuleConditionAbstract> conditions;
 
-    private int priority;
-    private String folderPath;
+    private final int priority;
+    private final String folderPath;
 
     public Rule(String folderPath, String definition, int priority) {
         this.folderPath = folderPath;

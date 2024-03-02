@@ -1,9 +1,7 @@
 package bg.sofia.uni.fmi.mjt.mail;
 
-import bg.sofia.uni.fmi.mjt.mail.directory.Directory;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.AccountAlreadyExistsException;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.AccountNotFoundException;
-import bg.sofia.uni.fmi.mjt.mail.exceptions.FolderAlreadyExistsException;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.FolderNotFoundException;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.RuleAlreadyDefinedException;
 import bg.sofia.uni.fmi.mjt.mail.metadata.MailMetadata;
@@ -11,13 +9,11 @@ import bg.sofia.uni.fmi.mjt.mail.rule.Rule;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class Outlook implements MailClient {
 
-    private Map<String, SystemAccount> systemAccounts;
+    private final Map<String, SystemAccount> systemAccounts;
 
     public Outlook() {
         this.systemAccounts = new HashMap<>();

@@ -6,11 +6,9 @@ import bg.sofia.uni.fmi.mjt.mail.exceptions.FolderAlreadyExistsException;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.FolderNotFoundException;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.InvalidPathException;
 import bg.sofia.uni.fmi.mjt.mail.exceptions.RuleAlreadyDefinedException;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
@@ -20,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OutlookTest {
-    private Outlook outlook = new Outlook();
+    private final Outlook outlook = new Outlook();
 
     @Test
     void testAddNewAccountAccountNameIsNull() {
@@ -336,8 +334,8 @@ public class OutlookTest {
         return new Mail(account2, recipients2, "This is another subject", "Other body", received2);
     }
 
-    Mail mail1 = getMail1();
-    Mail mail2 = getMail2();
+    final Mail mail1 = getMail1();
+    final Mail mail2 = getMail2();
 
     @Test
     void testAddRuleMoveMailsTwoFromTwo() {
@@ -637,7 +635,7 @@ public class OutlookTest {
             "AccountNotFoundException expected to be thrown when account is not found");
     }
 
-    private String metaData = getMetaData();
+    private final String metaData = getMetaData();
 
     private String getMetaData() {
         return "this is not a key: something" + System.lineSeparator() + "sender: sender@gmail.com" +
@@ -655,7 +653,7 @@ public class OutlookTest {
             "This is a sentence in the mailContent and it is the body, cat", received);
     }
 
-    private Mail mailReceiver = getMailReceiver();
+    private final Mail mailReceiver = getMailReceiver();
 
     @Test
     void testReceiveMailNoRules() {

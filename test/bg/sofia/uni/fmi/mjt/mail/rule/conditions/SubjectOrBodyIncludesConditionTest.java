@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SubjectOrBodyIncludesConditionTest {
 
-    private SubjectOrBodyIncludesCondition subjectOrBodyIncludes = new SubjectOrBodyIncludesCondition();
+    private final SubjectOrBodyIncludesCondition subjectOrBodyIncludes = new SubjectOrBodyIncludesCondition();
 
     @Test
     void testSetValuesOneLiner() {

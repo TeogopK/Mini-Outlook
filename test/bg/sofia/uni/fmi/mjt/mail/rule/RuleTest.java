@@ -41,7 +41,7 @@ public class RuleTest {
             "Exception expected to be thrown when rule definition has a duplicate");
     }
 
-    private Mail mail = getMail();
+    private final Mail mail = getMail();
 
     private Mail getMail() {
         Account sender = new Account("stoyo@fmi.bg", "Test Name");

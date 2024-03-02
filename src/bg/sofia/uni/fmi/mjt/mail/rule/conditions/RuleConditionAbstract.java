@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public abstract class RuleConditionAbstract {
-    protected String key;
+    protected final String key;
     protected Set<String> values;
 
     public RuleConditionAbstract(String key) {

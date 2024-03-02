@@ -1,10 +1,8 @@
 package bg.sofia.uni.fmi.mjt.mail.metadata;
 
-import bg.sofia.uni.fmi.mjt.mail.parsers.KeyFromTextToValueLineParser;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -15,7 +13,7 @@ public class MailMetadataTest {
 
     private MailMetadata metadata;
 
-    private String definition = getDefinition();
+    private final String definition = getDefinition();
 
     private String getDefinition() {
         return "this is not a key: something" + System.lineSeparator() + "sender: testy@gmail.com" +

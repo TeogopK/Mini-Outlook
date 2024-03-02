@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RecipientsIncludesConditionTest {
 
-    private RecipientsIncludesCondition recipientsIncludes = new RecipientsIncludesCondition();
+    private final RecipientsIncludesCondition recipientsIncludes = new RecipientsIncludesCondition();
 
     @Test
     void testSetValuesOneLiner() {

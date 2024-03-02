@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class DirectoryTest {
-    private Directory directory = new Directory();
+    private final Directory directory = new Directory();
 
     @Test
     void testDirectoryHasRoot() {
@@ -251,8 +251,6 @@ public class DirectoryTest {
 
     @Test
     void testGetMailsFromInboxZeroMails() {
-        String path = "/inbox";
-
         Set<Mail> mails = Set.of();
 
         assertEquals(mails, directory.getMailsFromInbox(),
@@ -336,14 +334,14 @@ public class DirectoryTest {
             "Expected mails to be added successfully in sent");
     }
 
-    String definition1 =
+    final String definition1 =
         "subject-includes: mjt, izpit" + System.lineSeparator() + "from: ivan@fmi.bg" + System.lineSeparator() +
             "subject-or-body-includes: izpit, 2022" + System.lineSeparator() +
             "recipients-includes: pesho@gmail.com, gosho@gmail.com" + System.lineSeparator();
 
-    Rule rule1 = new Rule("/inbox/new", definition1, 1);
-    Rule rule2 = new Rule("/inbox/second", "subject-includes: This", 2);
-    Rule rule3 = new Rule("/inbox/third", "from: camel@dontexist.com", 2);
+    final Rule rule1 = new Rule("/inbox/new", definition1, 1);
+    final Rule rule2 = new Rule("/inbox/second", "subject-includes: This", 2);
+    final Rule rule3 = new Rule("/inbox/third", "from: camel@dontexist.com", 2);
 
     @Test
     void testMoveEmailsFromInboxByRulePathNotFound() {

@@ -18,7 +18,7 @@ public class Directory {
     private final static String INBOX = "inbox";
     private final static String SENT = "sent";
     private final static String REGEX_CONSECUTIVE_PATH_SEPARATOR = ".*" + Pattern.quote(PATH_SEPARATOR) + "{2,}.*";
-    private Map<String, Set<Mail>> directoryPaths;
+    private final Map<String, Set<Mail>> directoryPaths;
 
     public Directory() {
         this.directoryPaths = new TreeMap<>();
