@@ -2,7 +2,7 @@ package bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions;
 
 import bg.sofia.uni.fmi.mjt.mail.tsk.Mail;
 
-public class SubjectOrBodyIncludesCondition extends RuleConditionAbstract {
+public class SubjectOrBodyIncludesCondition extends AbstractRuleCondition {
 
     public SubjectOrBodyIncludesCondition() {
         super("subject-or-body-includes:");

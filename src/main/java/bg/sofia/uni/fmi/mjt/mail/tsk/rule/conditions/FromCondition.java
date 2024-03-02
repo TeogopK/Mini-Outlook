@@ -2,7 +2,7 @@ package bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions;
 
 import bg.sofia.uni.fmi.mjt.mail.tsk.Mail;
 
-public class FromCondition extends RuleConditionAbstract {
+public class FromCondition extends AbstractRuleCondition {
 
     public FromCondition() {
         super("from:");

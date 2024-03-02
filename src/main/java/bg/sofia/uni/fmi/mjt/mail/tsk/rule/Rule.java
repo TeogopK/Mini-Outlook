@@ -4,7 +4,7 @@ import bg.sofia.uni.fmi.mjt.mail.tsk.Mail;
 import bg.sofia.uni.fmi.mjt.mail.tsk.exceptions.RuleAlreadyDefinedException;
 import bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions.FromCondition;
 import bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions.RecipientsIncludesCondition;
-import bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions.RuleConditionAbstract;
+import bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions.AbstractRuleCondition;
 import bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions.SubjectIncludesCondition;
 import bg.sofia.uni.fmi.mjt.mail.tsk.rule.conditions.SubjectOrBodyIncludesCondition;
 
@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Rule {
-    private final Set<RuleConditionAbstract> conditions;
+    private final Set<AbstractRuleCondition> conditions;
 
     private final int priority;
     private final String folderPath;
@@ -66,7 +66,7 @@ public class Rule {
         return folderPath;
     }
 
-    public Set<RuleConditionAbstract> getConditions() {
+    public Set<AbstractRuleCondition> getConditions() {
         return conditions;
     }
 

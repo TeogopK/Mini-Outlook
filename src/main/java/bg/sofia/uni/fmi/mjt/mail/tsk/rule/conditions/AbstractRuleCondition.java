@@ -8,11 +8,11 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public abstract class RuleConditionAbstract {
+public abstract class AbstractRuleCondition {
     protected final String key;
     protected Set<String> values;
 
-    public RuleConditionAbstract(String key) {
+    protected AbstractRuleCondition(String key) {
         this.key = key;
         this.values = new HashSet<>();
     }
@@ -36,7 +36,7 @@ public abstract class RuleConditionAbstract {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RuleConditionAbstract that = (RuleConditionAbstract) o;
+        AbstractRuleCondition that = (AbstractRuleCondition) o;
         return key.equals(that.key);
     }
 
