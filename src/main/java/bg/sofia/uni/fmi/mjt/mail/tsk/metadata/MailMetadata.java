@@ -9,18 +9,17 @@ import java.util.Set;
 
 public class MailMetadata {
 
-    private final String sender;
     private static final String SENDER_KEY = "sender:";
-
-    private final String subject;
     private static final String SUBJECT_KEY = "subject:";
-
-    private final LocalDateTime received;
     private static final String RECEIVED_KEY = "received:";
-    private static final String FORMAT_DATE_TIME = "yyyy-MM-dd HH:mm";
-
-    private final Set<String> recipients;
     private static final String RECIPIENTS_KEY = "recipients:";
+
+    private static final String FORMAT_DATE_TIME = "yyyy-MM-dd HH:mm";
+    
+    private final String sender;
+    private final String subject;
+    private final LocalDateTime received;
+    private final Set<String> recipients;
 
     public MailMetadata(String text) {
         if (text == null) {

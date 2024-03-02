@@ -1,7 +1,7 @@
 package bg.sofia.uni.fmi.mjt.mail.tsk.parsers;
 
 public class KeyFromTextToValueLineParser {
-    private final static int INDEX_NOT_FOUND = -1;
+    private static final int INDEX_NOT_FOUND = -1;
 
     public static String getValueLine(String key, String text) {
         int indexStart = text.indexOf(key);

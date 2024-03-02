@@ -12,15 +12,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Outlook implements MailClient {
+    private static final int UPPER_BOUND_PRIORITY = 10;
+    private static final int LOWER_BOUND_PRIORITY = 1;
 
     private final Map<String, SystemAccount> systemAccounts;
 
     public Outlook() {
         this.systemAccounts = new HashMap<>();
     }
-
-    private static final int UPPER_BOUND_PRIORITY = 10;
-    private static final int LOWER_BOUND_PRIORITY = 1;
 
     private boolean doesAccountExistsByEmail(String email) {
         for (var systemAccount : systemAccounts.values()) {

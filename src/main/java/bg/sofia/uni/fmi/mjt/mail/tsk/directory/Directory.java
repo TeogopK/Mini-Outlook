@@ -13,11 +13,12 @@ import java.util.TreeMap;
 import java.util.regex.Pattern;
 
 public class Directory {
-    private final static String ROOT = "/";
-    private final static String PATH_SEPARATOR = "/";
-    private final static String INBOX = "inbox";
-    private final static String SENT = "sent";
-    private final static String REGEX_CONSECUTIVE_PATH_SEPARATOR = ".*" + Pattern.quote(PATH_SEPARATOR) + "{2,}.*";
+    private static final String ROOT = "/";
+    private static final String PATH_SEPARATOR = "/";
+    private static final String INBOX = "inbox";
+    private static final String SENT = "sent";
+    private static final String REGEX_CONSECUTIVE_PATH_SEPARATOR = ".*" + Pattern.quote(PATH_SEPARATOR) + "{2,}.*";
+    
     private final Map<String, Set<Mail>> directoryPaths;
 
     public Directory() {
