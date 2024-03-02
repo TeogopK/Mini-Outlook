@@ -9,6 +9,6 @@ import java.util.TreeSet;
 
 public record SystemAccount(Account account, Directory directory, Set<Rule> rules) {
     public static SystemAccount of(Account account) {
-        return (new SystemAccount(account, new Directory(), new TreeSet<>(new RuleByPriorityComparator())));
+        return new SystemAccount(account, new Directory(), new TreeSet<>(new RuleByPriorityComparator()));
     }
 }
