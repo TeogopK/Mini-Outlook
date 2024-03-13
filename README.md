@@ -1,4 +1,4 @@
-# Mock Mail Client Application
+# Mini Outlook
 
 ## Overview
 
@@ -30,7 +30,57 @@ This repository contains a simulated mail client application designed to support
 
 ## Usage
 
+```java
+// Example code demonstrating usage
+public static void main(String[] args) {
+   Outlook outlook = new Outlook();
 
+   // Add new account
+   Account accountJohn = outlook.addNewAccount("John", "john@example.com");
+   Account accountBoss = outlook.addNewAccount("Boss", "boss@example.com");
+
+   // Create folders
+   outlook.createFolder(accountJohn.name(), "/inbox/important");
+   outlook.createFolder(accountJohn.name(), "/inbox/personal");
+
+   // Add rule for automatic sorting
+   outlook.addRule(accountJohn.name(), "/inbox/important", "from: boss@example.com", 5);
+
+   // Receive new mail
+   String receiveMailContent = String.join(System.lineSeparator(),
+            "sender: boss@example.com",
+            "subject: Important Meeting",
+            "received: 2022-12-08 09:14",
+            "recipients: john@example.com");
+   outlook.receiveMail(accountJohn.name(), receiveMailContent, "Meeting agenda...");
+
+   // Send mail
+   String sendMailContent = String.join(System.lineSeparator(),
+            "sender: john@example.com",
+            "subject: Progress Report",
+            "received: 2022-12-08 09:15",
+            "recipients: boss@example.com");
+   outlook.sendMail(accountJohn.name(), sendMailContent, "Project update...");
+
+   // Retrieve and display mails from specific folders
+   System.out.println("John's Important Mails:");
+   Collection<Mail> importantMails = outlook.getMailsFromFolder(accountJohn.name(), "/inbox/important");
+   for (Mail mail : importantMails) {
+      System.out.println(mail);
+   }
+
+   System.out.println("Boss's Inbox Mails:");
+   Collection<Mail> inboxMails = outlook.getMailsFromFolder(accountBoss.name(), "/inbox");
+   for (Mail mail : inboxMails) {
+      System.out.println(mail);
+   }
+}
+```
+
+## Solution notes
+
+- Use of Java Stream API is prohibited.
+- The solution does not create actual folders in the operating system of the executing machine.
 
 ## Build
 
